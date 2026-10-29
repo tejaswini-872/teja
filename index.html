@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HSN AquaRakshak – Smart Water Storage for Hassan</title>
+<style>
+:root{--bg:#f4f9fc;--card:#fff;--tx:#0b2a3c;--mu:#52717f;--bl:#0a6ebd;--gr:#12a05c;--bd:#d6e6ee;--lo:#d93a3a;--md:#e59a12;--hi:#12a05c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#08151e;--card:#0f2431;--tx:#e6f2f8;--mu:#93b0bf;--bd:#1d3b4c;--bl:#4aa8f0;--gr:#3fd08a}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font:16px/1.55 system-ui,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx)}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--card);border-bottom:1px solid var(--bd);z-index:5}
+nav{display:flex;gap:4px;align-items:center;padding:8px 12px;overflow-x:auto;max-width:1100px;margin:auto}
+nav b{color:var(--bl);white-space:nowrap;margin-right:8px}
+nav a{padding:8px 12px;border-radius:8px;color:var(--tx);text-decoration:none;white-space:nowrap;font-size:14px}
+nav a.on,nav a:hover{background:var(--bl);color:#fff}
+main{max-width:1100px;margin:auto;padding:16px}
+section{display:none;animation:f .4s}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(8px)}}
+.hero{background:linear-gradient(135deg,#0a6ebd,#12a05c);color:#fff;border-radius:18px;padding:36px 22px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(28px,6vw,46px);margin:0 0 10px;line-height:1.15}
+.hero p{max-width:620px;opacity:.95}
+.btn{display:inline-block;border:0;border-radius:10px;padding:11px 18px;font:600 15px inherit;cursor:pointer;background:var(--bl);color:#fff;text-decoration:none;margin:4px 6px 4px 0}
+.hero .btn{background:#fff;color:#0a6ebd}.hero .btn.g{background:transparent;color:#fff;border:2px solid #fff}
+.btn.sm{padding:6px 10px;font-size:13px}.btn.gr{background:var(--gr)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:16px 0}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px}
+.card h3{margin:0 0 6px}.big{font-size:30px;font-weight:700;color:var(--bl)}.mu{color:var(--mu);font-size:14px}
+.tag{display:inline-block;background:#fff3cd;color:#6b4e00;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600}
+.bar{height:14px;border-radius:8px;background:var(--bd);overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;width:0;border-radius:8px;transition:width 1s}
+.Low{background:var(--lo)}.Medium{background:var(--md)}.High{background:var(--hi)}
+.pill{color:#fff;border-radius:20px;padding:2px 10px;font-size:12px;font-weight:700}
+label{display:block;font-weight:600;margin:10px 0 4px;font-size:14px}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit}
+.err{color:var(--lo);font-size:13px;min-height:16px}
+.ok{background:#e3f7ec;color:#0b5c36;padding:12px;border-radius:10px;margin-top:10px}
+.al{border-left:4px solid var(--lo);padding:8px 12px;margin:6px 0;background:var(--bg);border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;border-bottom:1px solid var(--bd);text-align:left}
+.wrap{overflow-x:auto}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1;min-width:140px}
+h2{margin:22px 0 6px}footer{text-align:center;padding:24px;color:var(--mu);font-size:13px}
+.empty{padding:20px;text-align:center;color:var(--mu)}
+</style></head><body>
+<header><nav id="nav"><b>💧 AquaRakshak</b>
+<a href="#home">Home</a><a href="#dashboard">Dashboard</a><a href="#tanks">Tanks</a><a href="#rain">Rainwater</a><a href="#report">Report</a><a href="#resources">Resources</a><a href="#tips">Tips</a><a href="#admin">Admin</a></nav></header>
+<main>
+
+<section id="home">
+<div class="hero"><h1>Save Every Drop, Secure Every Future.</h1>
+<p>Hassan district depends on monsoon-fed reservoirs, lakes and household tanks. Uneven rainfall, leaking pipelines and unmanaged storage can leave neighbourhoods short in summer. AquaRakshak helps communities track tank levels, cut wastage, harvest rainwater and report problems early.</p>
+<a class="btn" href="#dashboard">View Dashboard</a><a class="btn g" href="#report">Report Water Issue</a><a class="btn g" href="#rain">Explore Solutions</a></div>
+<div class="grid"><div class="card"><h3>🛢️ Monitor storage</h3><p class="mu">Register tanks, update readings, get low-water alerts. Ready for IoT sensors later.</p></div>
+<div class="card"><h3>🌧️ Harvest rain</h3><p class="mu">Learn rooftop collection and estimate how much water your roof can capture.</p></div>
+<div class="card"><h3>📣 Report issues</h3><p class="mu">Flag shortages, leaks, damaged or overflowing tanks for review.</p></div></div>
+</section>
+
+<section id="dashboard"><h2>Smart Water Dashboard</h2>
+<p><span class="tag">SAMPLE DATA</span> <span class="mu">Demonstration values only, until real sensors or verified sources are connected.</span></p>
+<div class="row"><div><label for="fl">Location</label><select id="fl"></select></div><div><label for="ft">Tank</label><select id="ft"></select></div>
+<div><label for="th">Low threshold (%)</label><input id="th" type="number" min="1" max="90" value="25"></div></div>
+<div class="grid" id="kpi"></div>
+<div class="grid"><div class="card"><h3>Water levels</h3><div id="bars"></div></div>
+<div class="card"><h3>Alerts</h3><div id="alerts"></div></div></div>
+<div class="card"><h3>Recent updates</h3><div class="wrap"><table id="log"></table></div></div>
+</section>
+
+<section id="tanks"><h2>Water Storage Monitoring</h2>
+<div class="grid"><div class="card"><h3>Register a tank</h3>
+<label for="tn">Tank name</label><input id="tn"><label for="tl">Location</label><input id="tl" placeholder="e.g. Belur">
+<label for="tc">Total capacity (litres)</label><input id="tc" type="number"><label for="tcur">Current level (litres)</label><input id="tcur" type="number">
+<div class="err" id="terr"></div><button class="btn" id="tadd">Register tank</button></div>
+<div class="card"><h3>Update a reading</h3><p class="mu">Authorised users only. Sign in as demo admin on the Admin tab.</p>
+<label for="us">Tank</label><select id="us"></select><label for="ul">New level (litres)</label><input id="ul" type="number">
+<div class="err" id="uerr"></div><button class="btn gr" id="upd">Save reading</button>
+<p class="mu">IoT-ready: a sensor would post the same {tank_id, level_litres} reading to the <code>readings</code> table via a server function.</p></div></div>
+</section>
+
+<section id="rain"><h2>Rainwater Harvesting</h2>
+<div class="grid"><div class="card"><h3>Rooftop to tank</h3>
+<svg viewBox="0 0 360 190" width="100%" role="img" aria-label="Rain falls on a roof, flows through a gutter and filter into a storage tank"><text x="20" y="22" font-size="18">🌧️ 🌧️ 🌧️</text>
+<polygon points="20,90 110,45 200,90" fill="#0a6ebd"/><rect x="40" y="90" width="140" height="70" fill="#9bb7c6"/>
+<path d="M200,90 L215,90 L215,150 L250,150" stroke="#12a05c" stroke-width="5" fill="none"/>
+<rect x="250" y="125" width="30" height="25" fill="#12a05c"/><text x="244" y="118" font-size="11" fill="currentColor">Filter</text>
+<rect x="290" y="100" width="60" height="80" rx="6" fill="#0a6ebd"/><rect x="290" y="140" width="60" height="40" rx="6" fill="#4aa8f0"/><text x="292" y="94" font-size="11" fill="currentColor">Storage tank</text>
+<text x="40" y="180" font-size="11" fill="currentColor">Roof → gutter → filter → tank / recharge pit</text></svg></div>
+<div class="card"><h3>Collection calculator</h3>
+<label for="ra">Roof area (m²)</label><input id="ra" type="number" value="100"><label for="rr">Annual or event rainfall (mm)</label><input id="rr" type="number" value="800">
+<label for="rc">Runoff coefficient</label><select id="rc"><option value=".9">0.90 – Concrete / tile roof</option><option value=".8">0.80 – Metal sheet</option><option value=".6">0.60 – Mixed / older roof</option></select>
+<button class="btn" id="rb">Calculate</button><div id="ro" class="ok" style="display:none"></div><p class="mu">Litres = area × rainfall × coefficient. Use your local rainfall figure from an official source.</p></div></div>
+<div class="grid">
+<div class="card"><h3>Rooftop collection</h3><p class="mu">Gutters carry roof runoff through a filter into a covered tank.</p></div>
+<div class="card"><h3>Recharge pits</h3><p class="mu">Pits filled with gravel and sand let surplus water soak into the ground.</p></div>
+<div class="card"><h3>Check dams</h3><p class="mu">Small barriers across streams slow flow and raise groundwater.</p></div>
+<div class="card"><h3>Lake restoration</h3><p class="mu">Desilting and clearing inlets restores storage and local recharge.</p></div></div>
+</section>
+
+<section id="report"><h2>Report a Water Problem</h2>
+<div class="card" style="max-width:600px"><label for="rcat">Category</label><select id="rcat"><option>Water shortage</option><option>Leaking pipeline</option><option>Damaged tank</option><option>Overflowing storage</option></select>
+<label for="rloc">Location</label><input id="rloc"><label for="rd">Date</label><input id="rd" type="date">
+<label for="rdesc">Description</label><textarea id="rdesc" rows="4"></textarea>
+<label for="rph">Photo (optional, JPG/PNG, max 2 MB)</label><input id="rph" type="file" accept="image/jpeg,image/png">
+<div class="err" id="rerr"></div><button class="btn" id="rsub">Submit report</button><div id="rok" class="ok" style="display:none"></div></div>
+</section>
+
+<section id="resources"><h2>Hassan Water Resources</h2>
+<p class="mu">No live levels, rainfall or statistics are shown here, since none are connected to a verified source. Check official sources such as the Karnataka water resources authorities for current figures.</p>
+<div class="grid"><div class="card"><h3>Hemavathi Reservoir</h3><p class="mu">Major reservoir on the Hemavathi river near Gorur.</p></div>
+<div class="card"><h3>Yagachi Reservoir</h3><p class="mu">Reservoir on the Yagachi river near Belur.</p></div>
+<div class="card"><h3>Vatehole Reservoir</h3><p class="mu">Reservoir in the Sakleshpur area.</p></div>
+<div class="card"><h3>Lakes and community tanks</h3><p class="mu">Local lakes and village tanks can be added here once verified locations are available. Maps will be added only with reliable data.</p></div></div>
+</section>
+
+<section id="tips"><h2>Conservation Tips</h2>
+<div class="grid"><div class="card">🔧 Fix dripping taps and leaking pipes quickly.</div><div class="card">🪣 Reuse washing water for plants.</div><div class="card">🚿 Choose short showers and close taps while brushing.</div><div class="card">🌧️ Install rooftop harvesting before the monsoon.</div><div class="card">🚰 Cover tanks and check float valves to stop overflow.</div><div class="card">👥 Share what you learn with neighbours and schools.</div></div>
+</section>
+
+<section id="admin"><h2>Admin Panel</h2>
+<div id="login" class="card" style="max-width:480px"><p class="mu">Demo mode only. A real deployment uses Supabase Auth with role-based access and database rules.</p><button class="btn" id="si">Sign in as demo admin</button></div>
+<div id="panel" style="display:none"><button class="btn sm" id="so">Sign out</button><button class="btn sm gr" id="rs">Reset sample data</button>
+<h3>Reports</h3><div class="card wrap"><table id="rt"></table></div>
+<h3>Tanks</h3><div class="card wrap"><table id="at"></table></div>
+<h3>Notifications</h3><div class="card" id="nt"></div></div>
+</section>
+</main>
+<footer>HSN AquaRakshak · Hassan, Karnataka · Demo build using sample data</footer>
+
+<script>
+const $=i=>document.getElementById(i);
+const SEED={tanks:[
+{id:1,name:"Hassan City Overhead Tank",loc:"Hassan",cap:50000,cur:36000},
+{id:2,name:"Belur Community Tank",loc:"Belur",cap:20000,cur:4200},
+{id:3,name:"Arsikere Ward Tank",loc:"Arsikere",cap:30000,cur:15000},
+{id:4,name:"Sakleshpur School Tank",loc:"Sakleshpur",cap:10000,cur:8800},
+{id:5,name:"Channarayapatna Village Tank",loc:"Channarayapatna",cap:15000,cur:2900}],
+log:[{t:"Today 08:10",tank:"Hassan City Overhead Tank",lv:36000},{t:"Today 07:30",tank:"Belur Community Tank",lv:4200},{t:"Yesterday",tank:"Arsikere Ward Tank",lv:15000}],
+reports:[{id:1,cat:"Leaking pipeline",loc:"Hassan",d:"2026-10-25",desc:"Pipe leaking near bus stand (sample)",st:"Open"}],th:25};
+let S;
+try{S=JSON.parse(localStorage.getItem("aq")||"null")}catch(e){S=null}
+S=S||JSON.parse(JSON.stringify(SEED));
+function save(){try{localStorage.setItem("aq",JSON.stringify(S))}catch(e){}}
+const pct=t=>Math.round(t.cur/t.cap*100);
+const st=p=>p<S.th?"Low":p<60?"Medium":"High";
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let admin=false;
+
+function route(){const h=(location.hash||"#home").slice(1);const id=document.getElementById(h)?h:"home";
+document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===id));
+document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.hash==="#"+id));
+if(id==="dashboard")setTimeout(dash,30);}
+addEventListener("hashchange",route);
+
+function filters(){const l=$("fl").value,t=$("ft").value;
+const locs=["All",...new Set(S.tanks.map(x=>x.loc))];$("fl").innerHTML=locs.map(x=>`<option ${x===l?"selected":""}>${x}</option>`).join("");
+const ts=S.tanks.filter(x=>$("fl").value==="All"||x.loc===$("fl").value);
+$("ft").innerHTML=`<option value="All">All</option>`+ts.map(x=>`<option value="${x.id}" ${x.id==t?"selected":""}>${esc(x.name)}</option>`).join("");}
+function view(){return S.tanks.filter(x=>($("fl").value==="All"||x.loc===$("fl").value)&&($("ft").value==="All"||x.id==$("ft").value));}
+function dash(){const v=view();const cap=v.reduce((a,b)=>a+b.cap,0),cur=v.reduce((a,b)=>a+b.cur,0);
+$("kpi").innerHTML=[["Registered tanks",v.length],["Water available",cur.toLocaleString()+" L"],["Storage capacity",cap.toLocaleString()+" L"],["Reported issues",S.reports.filter(r=>r.st!=="Resolved").length]].map(k=>`<div class="card"><div class="mu">${k[0]}</div><div class="big">${k[1]}</div></div>`).join("");
+$("bars").innerHTML=v.length?v.map(t=>{const p=pct(t),s=st(p);return `<div><b>${esc(t.name)}</b> <span class="pill ${s}">${s}</span> <span class="mu">${p}%</span><div class="bar"><i class="${s}" data-w="${p}"></i></div></div>`}).join(""):'<div class="empty">No tanks match this filter.</div>';
+requestAnimationFrame(()=>document.querySelectorAll(".bar i").forEach(i=>i.style.width=i.dataset.w+"%"));
+const low=v.filter(t=>pct(t)<S.th);
+$("alerts").innerHTML=low.length?low.map(t=>`<div class="al">⚠️ ${esc(t.name)} is at ${pct(t)}%, below the ${S.th}% threshold.</div>`).join(""):'<div class="empty">No low-water alerts.</div>';
+$("log").innerHTML="<tr><th>When</th><th>Tank</th><th>Level (L)</th></tr>"+S.log.slice(0,6).map(l=>`<tr><td>${esc(l.t)}</td><td>${esc(l.tank)}</td><td>${l.lv.toLocaleString()}</td></tr>`).join("");}
+$("fl").onchange=()=>{filters();dash()};$("ft").onchange=dash;
+$("th").onchange=()=>{const n=+$("th").value;if(n>=1&&n<=90){S.th=n;save();dash();adminRender()}};
+
+function sel(){$("us").innerHTML=S.tanks.map(t=>`<option value="${t.id}">${esc(t.name)}</option>`).join("")}
+$("tadd").onclick=()=>{const n=$("tn").value.trim(),l=$("tl").value.trim(),c=+$("tc").value,u=+$("tcur").value;
+if(!n||!l||!(c>0)||$("tcur").value===""||u<0||u>c){$("terr").textContent="Enter a name, location, capacity above 0, and a level between 0 and capacity.";return}
+$("terr").textContent="";S.tanks.push({id:Date.now(),name:n,loc:l,cap:c,cur:u});S.log.unshift({t:"Just now",tank:n,lv:u});
+if(pct(S.tanks.at(-1))<S.th)S.log.notes=0;save();["tn","tl","tc","tcur"].forEach(i=>$(i).value="");sel();filters();location.hash="#dashboard";};
+$("upd").onclick=()=>{if(!admin){$("uerr").textContent="Please sign in as an authorised user (Admin tab).";return}
+const t=S.tanks.find(x=>x.id==$("us").value),v=+$("ul").value;
+if(!t||$("ul").value===""||v<0||v>t.cap){$("uerr").textContent="Level must be between 0 and "+(t?t.cap:0)+" litres.";return}
+$("uerr").textContent="";t.cur=v;S.log.unshift({t:"Just now",tank:t.name,lv:v});save();filters();location.hash="#dashboard";};
+
+$("rb").onclick=()=>{const a=+$("ra").value,r=+$("rr").value,c=+$("rc").value;const o=$("ro");o.style.display="block";
+o.textContent=(a>0&&r>0)?`Estimated harvest: ${Math.round(a*r*c).toLocaleString()} litres.`:"Enter roof area and rainfall above 0.";};
+
+$("rd").valueAsDate=new Date();
+$("rsub").onclick=()=>{const loc=$("rloc").value.trim(),d=$("rdesc").value.trim(),f=$("rph").files[0];
+if(loc.length<3||d.length<10||!$("rd").value){$("rerr").textContent="Add a location, a date, and a description of at least 10 characters.";return}
+if(f&&(!["image/jpeg","image/png"].includes(f.type)||f.size>2097152)){$("rerr").textContent="Photo must be a JPG or PNG under 2 MB.";return}
+$("rerr").textContent="";const id=Date.now()%100000;S.reports.unshift({id,cat:$("rcat").value,loc,d:$("rd").value,desc:d,st:"Open"});save();
+$("rok").style.display="block";$("rok").textContent=`✅ Thank you. Report #${id} was submitted and will be reviewed.`;$("rloc").value=$("rdesc").value=$("rph").value="";};
+
+function adminRender(){$("login").style.display=admin?"none":"block";$("panel").style.display=admin?"block":"none";if(!admin)return;
+$("rt").innerHTML="<tr><th>#</th><th>Category</th><th>Location</th><th>Description</th><th>Status</th></tr>"+(S.reports.map(r=>`<tr><td>${r.id}</td><td>${esc(r.cat)}</td><td>${esc(r.loc)}</td><td>${esc(r.desc)}</td><td><select data-r="${r.id}">${["Open","In progress","Resolved"].map(x=>`<option ${x===r.st?"selected":""}>${x}</option>`).join("")}</select></td></tr>`).join("")||'<tr><td colspan=5 class="empty">No reports yet.</td></tr>');
+$("at").innerHTML="<tr><th>Tank</th><th>Location</th><th>Level</th><th></th></tr>"+S.tanks.map(t=>`<tr><td>${esc(t.name)}</td><td>${esc(t.loc)}</td><td>${pct(t)}%</td><td><button class="btn sm" data-d="${t.id}">Delete</button></td></tr>`).join("");
+const low=S.tanks.filter(t=>pct(t)<S.th);$("nt").innerHTML=low.length?low.map(t=>`<div class="al">📩 Sample alert: ${esc(t.name)} is low (${pct(t)}%).</div>`).join(""):'<div class="empty">No notifications.</div>';
+document.querySelectorAll("[data-r]").forEach(s=>s.onchange=()=>{S.reports.find(r=>r.id==s.dataset.r).st=s.value;save();dash()});
+document.querySelectorAll("[data-d]").forEach(b=>b.onclick=()=>{S.tanks=S.tanks.filter(t=>t.id!=b.dataset.d);save();sel();filters();adminRender()});}
+$("si").onclick=()=>{admin=true;adminRender()};$("so").onclick=()=>{admin=false;adminRender()};
+$("rs").onclick=()=>{S=JSON.parse(JSON.stringify(SEED));save();$("th").value=S.th;sel();filters();adminRender()};
+$("th").value=S.th;sel();filters();adminRender();route();
+</script></body></html>
